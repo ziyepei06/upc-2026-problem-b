@@ -1,0 +1,15 @@
+== physics truth ==
+  physics trial 25/120
+  physics trial 50/120
+  physics trial 75/120
+  physics trial 100/120
+  e1: bias_y=+0.081 rmse_y=0.779 mean_sy=0.820 cov68y=0.69 cov90y=0.93 cov68z=0.57 Pin_pred=0.60 (true 1.00)
+  e2: bias_y=+0.025 rmse_y=0.274 mean_sy=0.326 cov68y=0.78 cov90y=0.95 cov68z=0.80 Pin_pred=0.87 (true 1.00)
+== kinematic truth ==
+  kinematic trial 25/120
+  kinematic trial 50/120
+  kinematic trial 75/120
+  kinematic trial 100/120
+  e1: bias_y=-0.028 rmse_y=0.580 mean_sy=0.624 cov68y=0.73 cov90y=0.89 cov68z=0.64 Pin_pred=0.59 (true 0.99)
+  e2: bias_y=+0.522 rmse_y=0.547 mean_sy=0.272 cov68y=0.04 cov90y=0.34 cov68z=0.87 Pin_pred=0.80 (true 0.99)
+wrote results/valid.json

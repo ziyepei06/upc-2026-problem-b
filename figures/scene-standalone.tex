@@ -1,0 +1,26 @@
+\documentclass[border=2pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{tikz}
+\definecolor{ink}{HTML}{1B1B1B}
+\definecolor{blueink}{HTML}{1A5FB4}
+\definecolor{rustink}{HTML}{A63A1E}
+\definecolor{dimtext}{HTML}{6B6B6B}
+\definecolor{bluetext}{HTML}{1A5FB4}
+\definecolor{flightc}{HTML}{1A5FB4}
+\definecolor{rust}{HTML}{A63A1E}
+\tikzset{
+  pitchline/.style={draw=green!30!black!35, line width=0.35pt},
+  netline/.style={draw=black!18, line width=0.25pt},
+  goalpost/.style={draw=ink, line width=2.4pt, line cap=round, line join=round},
+  flight/.style={draw=flightc, line width=1.15pt, line cap=round},
+  shadow/.style={draw=flightc!35, line width=0.45pt, dash pattern=on 2.2pt off 2.2pt},
+  clouddot/.style={fill=rustink!55},
+  dimarrow/.style={draw=black!45, line width=0.35pt, <->, >=stealth},
+}
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm]
+\input{scene-body.tikz}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or refer to the paper, please cite it as below."
+title: "Predicting the Goal-Plane Entry of a Penalty Kick from Two Early Ball Positions"
+type: software
+authors:
+  - name: "UPC 2026 Team 230"
+repository-code: "https://github.com/ziyepei06/upc-2026-problem-b"
+license: MIT
+year: 2026
+abstract: >-
+  UPC 2026 Problem B. Two measured ball positions at t = 0.05 s and t = 0.10 s
+  are used to fit a six-parameter transverse-force model; the goal-plane entry
+  point, its calibrated intervals, and the model-form envelope are reported.
+keywords:
+  - penalty kick
+  - goal-plane prediction
+  - Magnus force
+  - inverse problem
+  - Bayesian uncertainty quantification
+  - identifiability

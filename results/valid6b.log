@@ -1,0 +1,10 @@
+same 10
+same 20
+same 30
+same 40
+same 50
+mm 10
+mm 20
+same n=50 cov90 y 0.940 z 0.940 joint 0.880 | width y 0.693 z 0.678 | bias y +0.025 | P 0.671
+mismatch n=25 cov90 y 0.920 z 0.920 joint 0.840 | width y 0.693 z 0.674 | bias y -0.026 | P 0.691
+written
