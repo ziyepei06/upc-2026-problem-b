@@ -41,17 +41,17 @@ code/                                           分析代码（只用 numpy + ma
 results/                                        论文中每个数字对应的 JSON 输出
 notes/                                          推导笔记与"数字溯源"索引
 scripts/                                        编译/字数/合规检查脚本
-230B.pdf                                        提交版（230 队，B 题）
+230B.pdf                                        论文 PDF 副本（文件名按 <队号><题号>.pdf）
 ```
 
 ## 编译论文
 
 ```bash
-make        # latexmk + 提交前检查（页数、摘要长度、命名）
+make        # latexmk + 格式检查（页数、摘要长度、命名）
 make pdf    # 同时生成 230B.pdf
 ```
 
-需要带 `latexmk`、`xelatex`/`pdflatex` 与 `bibtex` 的 TeX Live。
+需要带 `latexmk`、`xelatex` 与 `bibtex` 的 TeX Live。
 
 ## 复现分析
 

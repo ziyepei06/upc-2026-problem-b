@@ -49,17 +49,17 @@ code/                                           analysis code (numpy + matplotli
 results/                                        JSON outputs behind every number in the paper
 notes/                                          derivations and the number-provenance index
 scripts/                                        build/length/compliance helpers
-230B.pdf                                        submission copy (team 230, problem B)
+230B.pdf                                        PDF copy of the paper, named <team><problem>.pdf
 ```
 
 ## Build the paper
 
 ```bash
-make        # latexmk + the submission checks (page count, summary length, naming)
+make        # latexmk + the format checks (page count, summary length, naming)
 make pdf    # also copies the result to 230B.pdf
 ```
 
-Needs a TeX Live with `latexmk`, `xelatex`/`pdflatex` and `bibtex`.
+Needs a TeX Live with `latexmk`, `xelatex` and `bibtex`.
 
 ## Reproduce the analysis
 

@@ -10,7 +10,7 @@ TEAM    := $(shell sed -n 's/^\\newcommand{\\teamnum}{\([^}]*\)}.*/\1/p' config.
 PROBLEM := $(shell sed -n 's/^\\newcommand{\\problemltr}{\([^}]*\)}.*/\1/p' config.tex)
 SUBMIT  := $(TEAM)$(PROBLEM).pdf
 SKILL   ?= scripts
-LATEXMK_FLAGS := -pdf -interaction=nonstopmode -halt-on-error -file-line-error -synctex=1
+LATEXMK_FLAGS := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -synctex=1
 
 .PHONY: all build check words figs pdf clean
 
