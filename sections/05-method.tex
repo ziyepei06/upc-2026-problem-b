@@ -3,7 +3,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.92\textwidth]{f17-workflow.pdf}
+  \includegraphics[width=0.83\textwidth]{f17-workflow.pdf}
   \caption{The prediction pipeline of Sections~\ref{sec:model}--\ref{sec:results},
   from the two fixes to the reported interval and probability. Each stage is
   checked against an independent calculation: the integrator against DOP853,
@@ -52,6 +52,30 @@ research problem \citep{vorobev2025}. The assumed $5$ mm is therefore
 optimistic, and \S\ref{sec:scenarios} repeats the inference with
 $\sigma_{\rm pos}$ between $2.5$ and $20$ mm.
 
+Equation~\eqref{eq:noise} treats the two fixes as independent and attributes all
+of the error to the position. A real tracking system also stumbles over the
+time stamps, and a time error of $\sigma_t$ displaces the measurement along the
+flight by $\sigma_t|\vect v|$, which for $\sigma_t=\SI{1}{ms}$ and
+$|\vect v|\approx\SI{31}{m\,s^{-1}}$ is already \SI{31}{mm}, six times the
+assumed positional error. The natural extension is therefore a block-diagonal
+observation covariance,
+\begin{equation}
+  \vect C_i=\sigma_{\rm pos}^2\vect I_3+\sigma_t^2\,\vect v_i\vect v_i^{\top},
+  \qquad i=1,2,
+  \label{eq:cov}
+\end{equation}
+in which the second term is the first-order propagation of a time-stamp error
+through the velocity, so that the measurement uncertainty is anisotropic: it is
+largest exactly along the direction in which the two fixes carry most of their
+information. A common-mode offset, which is the other error mode of a
+multi-camera system, is represented by adding
+$\sigma_b^2\vect 1\vect 1^{\top}$ to both blocks. Both extensions leave the
+likelihood Gaussian and cost nothing numerically; \S\ref{sec:validation}
+reports how much they move the prediction, and the answer that we quote is the
+one obtained with the isotropic model of Eq.~\eqref{eq:noise}, because the
+problem supplies no timing or correlation information and the extensions serve
+as a robustness check rather than as a different measurement model.
+
 \subsection{Information content of six coordinates}
 \label{sec:audit}
 
@@ -99,15 +123,19 @@ With the noise model of Eq.~\eqref{eq:noise}, the likelihood is
   \sum_{i=1}^{2}\left\|\vect r(t_i;\vect\theta)-\vect r_i\right\|^2\right],
   \label{eq:like}
 \end{equation}
-truncated by the hard bounds below. The priors are independent normals:
-$\vect v_0\sim\mathcal N((30,0,7),\operatorname{diag}(15^2,15^2,10^2))$
-m s$^{-1}$, $C_D\sim\mathcal N(0.25,0.15^2)$, and
-$\beta_i\sim\mathcal N(0,0.008^2)$ m$^{-1}$ for $i=1,2$, with the hard bounds
-$5 < v_{0x} < 60$ m\,s$^{-1}$,
-$|v_{0y}| < 30$ m\,s$^{-1}$,
-$0 < v_{0z} < 30$ m\,s$^{-1}$,
-$0 < C_D < 1$, and
-$|\beta_i| < 0.08$ m$^{-1}$; Table~\ref{tab:priors} lists them. The launch prior is broad compared
+with the priors taken as independent normals,
+\[
+  \vect v_0\sim\mathcal N\!\big((30,0,7),\operatorname{diag}(15^2,15^2,10^2)\big),\quad
+  C_D\sim\mathcal N(0.25,0.15^2),\quad
+  \beta_i\sim\mathcal N(0,0.008^2),
+\]
+in which $\vect v_0$ is in \si{m\,s^{-1}} and $\beta_i$ in \si{m^{-1}}; both are
+truncated by the hard bounds
+\[
+  5<v_{0x}<60, \quad |v_{0y}|<30, \quad 0<v_{0z}<30, \quad
+  0<C_D<1, \quad |\beta_i|<0.08 ,
+\]
+in SI units, listed in Table~\ref{tab:priors}. The launch prior is broad compared
 with the precision of the fixes, so the data, not the prior, fix the launch
 direction. The drag prior is wider than the
 wind-tunnel range $0.17$--$0.22$ \citep{carre2005,goff2012}, because the

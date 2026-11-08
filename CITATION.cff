@@ -7,10 +7,16 @@ authors:
 repository-code: "https://github.com/ziyepei06/upc-2026-problem-b"
 license: MIT
 year: 2026
+version: "9.0"
+date-released: "2026-11-08"
 abstract: >-
   UPC 2026 Problem B. Two measured ball positions at t = 0.05 s and t = 0.10 s
   are used to fit a six-parameter transverse-force model; the goal-plane entry
-  point, its calibrated intervals, and the model-form envelope are reported.
+  point (2.785, 1.945) m, its calibrated intervals, the model and scenario
+  envelopes, and an observation-design study are reported. The paper also
+  measures the drag coefficient on real 2-D tracking data and shows that the
+  three given coordinates imply a deceleration above the 95th percentile of real
+  trajectories.
 keywords:
   - penalty kick
   - goal-plane prediction

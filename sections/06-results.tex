@@ -94,7 +94,7 @@ which we return when the six-parameter model is defined.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.74\textwidth]{f02-trajectories.pdf}
+  \includegraphics[width=0.67\textwidth]{f02-trajectories.pdf}
   \caption{Ball trajectory through the three sampled positions projected onto the
   horizontal (a) and vertical (b) planes, with two continuations to the goal
   plane: the constant-acceleration extrapolation (dashed) and a drag-and-spin
@@ -103,19 +103,6 @@ which we return when the six-parameter model is defined.
   belong to the earlier control analysis and are shown only to indicate the
   extrapolation uncertainty.}
   \label{fig:trajectories}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.66\textwidth]{f19-residuals.pdf}
-  \caption{Goodness of fit at the two fixes for the nested models of
-  Table~\ref{tab:ladder}, in units of the assumed position noise
-  $\sigma_{\rm pos}=\SI{5}{mm}$ (dashed line). Gravity alone misses by more
-  than two noise widths; drag alone still misses by one; adding a lateral force
-  term collapses the residual by an order of magnitude, and the six-parameter
-  answer fits within the noise. The ladder therefore measures how many force
-  terms the data support, not how well one model was tuned.}
-  \label{fig:residuals}
 \end{figure}
 
 \subsection{The model ladder}
@@ -208,7 +195,7 @@ better conditioned than local curvature or torsion estimates
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.65\textwidth]{f13-ladder.pdf}
+  \includegraphics[width=0.59\textwidth]{f13-ladder.pdf}
   \caption{Model ladder from Table~\ref{tab:ladder}. Each point is the predicted
   entry ordinate $y$ at the goal plane; the vertical dashed line marks the
   mean of the four complete models, $2.67$~m, and the grey band spans the model-form range of
@@ -341,7 +328,7 @@ present data span $0.1$~s and $3$~m, so the trade-off is severe by construction.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.77\textwidth]{f05-identifiability.pdf}
+  \includegraphics[width=0.69\textwidth]{f05-identifiability.pdf}
   \caption{Identifiability of the inverse problem. (a) Scaled spectrum of the
   data Jacobian for the seven-parameter model (blue) and a six-parameter
   constant-acceleration model (red); the seven-parameter spectrum collapses at the
@@ -351,19 +338,6 @@ present data span $0.1$~s and $3$~m, so the trade-off is severe by construction.
   constant predicted entry ordinate.
   The ridge is the geometrical origin of the along-flight null direction.}
   \label{fig:identifiability}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.72\textwidth]{f21-crosscheck.pdf}
-  \caption{Cross-check of the entry ordinate across independent calculations:
-  two samplers of the six-parameter posterior, the mean of the four complete models,
-  drag-plus-lateral model, and the two control estimators. Bars are $90\%$
-  intervals; the shaded band is the model envelope of
-  Eq.~\eqref{eq:modelenvelope}. Both samplers of the adopted model land inside
-  the band, and the only outliers are the two controls that omit a force the
-  data require.}
-  \label{fig:crosscheck}
 \end{figure}
 
 \subsection{The posterior answer}
@@ -439,7 +413,7 @@ post.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.59\textwidth]{f03-goalplane.pdf}
+  \includegraphics[width=0.53\textwidth]{f03-goalplane.pdf}
   \caption{The goal plane seen from the kicker. The solid rectangle is the goal
   mouth and the dashed inner rectangle is the whole-ball clearance limit. Shaded
   contours enclose $68$, $87$ and $95\%$ of the predictive mass of the M6
@@ -449,7 +423,7 @@ post.
 \end{figure}
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.77\textwidth]{f04-histograms.pdf}
+  \includegraphics[width=0.69\textwidth]{f04-histograms.pdf}
   \caption{Marginal posterior densities of (a) the entry ordinate $y$ and (b) the
   entry height $z$ for the M6 answer. The dotted lines mark the post and the
   crossbar; the distributions are unimodal and close to symmetric, and both lie
@@ -459,7 +433,7 @@ post.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.90\textwidth]{f20-sigma.pdf}
+  \includegraphics[width=0.81\textwidth]{f20-sigma.pdf}
   \caption{Sensitivity to the assumed fix noise, the largest single scenario
   factor after the force law. Left: mean entry ordinate with its $95\%$
   interval; the dashed line is the post. Right: whole-ball goal probability.
@@ -542,7 +516,7 @@ available for every assumption.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.77\textwidth]{f08-scenarios.pdf}
+  \includegraphics[width=0.97\textwidth]{f08-scenarios.pdf}
   \caption{Scenario sensitivity of the answer. Each row is one alternative
   assumption set; the point is the posterior-mean entry ordinate $\bar y$ and the
   colour is $P(\text{clearance})$, read on the right-hand scale. The grey band is
@@ -555,7 +529,7 @@ available for every assumption.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.70\textwidth]{f09-noise.pdf}
+  \includegraphics[width=0.63\textwidth]{f09-noise.pdf}
   \caption{Sensitivity to the assumed position noise for the two control
   estimators: (a) the standard deviation of the entry ordinate and (b) the
   probability of a clean goal, as functions of $\sigma_{\rm pos}$. The vertical
@@ -579,32 +553,74 @@ dataset gives the number that matters for this paper: across \num{4051} annotate
 ball positions in SoccerNet-v3D the optimised 3-D reconstruction residual has a
 median of \SI{0.050}{m} (10th percentile \SI{0.007}{m}, 90th
 \SI{0.27}{m}), against a raw reprojection residual of \SI{2.85}{m} before the
-bundle optimisation. Figure~\ref{fig:realdata} places these numbers beside the
-two other scales in the problem: the \SI{2.9}{mm} implied by printing the
-coordinates to \SI{0.01}{m}, and the \SI{15}{mm} acceptance limit of goal-line
-technology. The fixes of this problem are therefore between one and two orders of
+bundle optimisation. Beside the \SI{2.9}{mm} implied by printing the coordinates
+to \SI{0.01}{m} and the \SI{15}{mm} acceptance limit of goal-line technology,
+these are the three scales of the problem. The fixes of this problem are therefore between one and two orders of
 magnitude more precise than the best publicly available 3-D ball reconstruction.
 
 The consequence is quantitative. Our scenario rows cover \SI{2.5}{} to
 \SI{20}{mm}: over that range the mean entry ordinate moves from \SI{2.687}{} to
 \SI{3.130}{m} and the goal probability falls from \num{0.9997} to \num{0.731}. A
 real deployment at the \SI{50}{mm} of broadcast reconstruction lies beyond the
-grid, and the trend of Figure~\ref{fig:noise} puts the lateral uncertainty at a
+grid; the trend of Figure~\ref{fig:noise} puts the lateral uncertainty at a
 few tenths of a metre with a goal probability near one half. The method is
 therefore a laboratory-precision statement about a quoted coordinate pair, and
 its transferable content for a real match is the interval and the design advice,
 not the third digit of the point estimate.
 
-\begin{figure}[t]
+\subsection{Drag from real trajectories}
+\label{sec:realdrag}
+
+The drag coefficient is the one parameter of the model that real data could in
+principle fix, so we tried to measure it rather than assume it. In the horizontal
+plane a flying ball obeys $\dd\vect v_{xy}/\dd t=-k|\vect v|\vect v_{xy}$ with
+$k=\rho AC_D/2m$, and gravity does not enter; the solution is a straight,
+logarithmically slowing path, which we fit to every one-second window of the two
+public 2-D tracking series whose mean speed exceeds \SI{12}{m\,s^{-1}}. The
+frictionless-flight assumption is the selection criterion as well: a window that
+contains a bounce or a touch does not fit and is discarded by the residual test.
+
+The result is negative and worth reporting. From the elite-league series
+\citep{bassek2025} the $336$ surviving windows give a median $C_D=0.38$ with an
+interquartile range of $0.28$ to $0.73$; from the heavily smoothed Metrica sample \citep{metrica2020}
+the $14$ windows give $0.11$. The same estimator applied to synthetic flights
+with $C_D=0.200$, sampled at \SI{25}{Hz} with \SI{5}{mm} noise and inclinations
+up to $30^\circ$, returns $0.209$ with an interquartile range of $0.199$ to
+$0.221$ (Fig.~\ref{fig:realdrag}). The estimator is therefore sharp to $\pm0.02$
+when the data are consistent with a flight, and the factor of three between the
+two providers is a property of their tracking pipelines, not of footballs. A 2-D
+book of one-second windows cannot adjudicate between $C_D=0.19$ and $C_D=0.35$,
+which is why the paper takes the wind-tunnel plateau as a prior and not as a
+measurement.
+
+What the same windows do establish is the scale of the aerodynamic force. The
+median horizontal deceleration of a ball at \SI{25}{m\,s^{-1}} is
+\SI{13}{m\,s^{-1}} in this sample and its $95$th percentile is
+\SI{18}{m\,s^{-1}}; only $2$\,\% of the windows decelerate faster than
+\SI{22.6}{m\,s^{-1}}. That figure is what the three given coordinates demand: with
+a launch speed of \SI{31}{m\,s^{-1}} and no spin the fitted drag would have to
+decelerate the ball at exactly \SI{22.6}{m\,s^{-1}}, i.e. $2.3g$, and the
+observed $a_y/a_x=1.00$ requires that most of it act perpendicular to the flight.
+The two fixes are therefore not a typical free flight: they sit above the
+\SI{95}{}th percentile of a real, deliberately contaminated sample. This is the
+sense in which the anomalous $C_D$ belongs to the data rather than to the model.
+The fit moves $C_D$ and the transverse coefficients together to accommodate
+coordinates that no physically consistent trajectory reproduces, and the
+reported answer is conditional on that accommodation. Had the coordinates been
+consistent with a ball, the fit would have returned $C_D\approx0.2$ and the
+transverse force would have been small.
+
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.68\textwidth]{f22-realdata.pdf}
-  \caption{Precision of real ball tracking against the precision of this problem.
-  Histograms are the residuals of \num{4051} real 3-D ball reconstructions in
-  SoccerNet-v3D, before (raw reprojection) and after the bundle optimisation
-  (median \SI{0.050}{m}). Dashed lines mark the \SI{2.9}{mm} implied by the
-  printed coordinates, the \SI{15}{mm} goal-line-technology limit, and the
-  \SI{50}{}--\SI{65}{mm} of real broadcast and open tracking.}
-  \label{fig:realdata}
+  \includegraphics[width=0.72\textwidth]{f23-realdrag.pdf}
+  \caption{Drag coefficient recovered from one-second windows of real 2-D
+  tracking, against the estimate obtained from synthetic flights of known
+  coefficient (blue) at the same sampling rate and noise. The estimator is
+  accurate to $\pm0.02$ on consistent data, so the wide spread of the real
+  windows and the factor of three between providers measure the tracking
+  pipelines rather than the aerodynamics. The dashed line is the coefficient the
+  three given coordinates force.}
+  \label{fig:realdrag}
 \end{figure}
 
 \subsection{Validation on synthetic truths}
@@ -635,13 +651,10 @@ same failure mode as the Magnus mismatch of the $n=500$ study above, and the
 constant force is partly absorbed by refitting the launch velocity over so short
 a baseline, which is why it costs so little. The claim we make is therefore
 narrow: for this one plausible misspecification, the interval of the adopted
-model does not visibly collapse, and the vertical coordinate remains the one
-that carries the residual model risk, which is why the calibration factor
+model does not visibly collapse, and the vertical coordinate remains the one that
+carries the residual model risk, which is why the calibration factor
 $\lambda_z\approx4.9$ is reported separately rather than folded into the
-$P$-value. The vertical
-coordinate remains the one that carries the residual model risk, which is why the
-calibration factor $\lambda_z\approx4.9$ is reported separately rather than
-folded into the $P$-value.
+$P$-value.
 
 Why is the calibration run on M3 rather than on the adopted model? Because M3 is
 the model that fails: with a single lateral coefficient it has no free direction
@@ -699,6 +712,53 @@ prediction for this kick.
   \end{tabular}
 \end{table}
 
+\subsection{Validation across error models}
+\label{sec:errormodels}
+
+The isotropic noise of Eq.~\eqref{eq:noise} is an assumption, not a property of
+the data, so the pipeline was also run against synthetic truths generated with
+three different error models: a common-mode offset on both fixes, a time-stamp
+error, and a force law that differs from the fitted one by an extra transverse
+term. Each arm uses $750$ independent truths, and $300$ further truths are
+launched low enough that they never reach the plane, which tests the branch that
+must report ``no entry'' rather than an entry coordinate. Table~\ref{tab:errormodels}
+summarises the result. The entry RMSE stays between $0.29$~m and $0.33$~m over
+all four arms, and the Brier score of the whole-sphere clearance probability
+between $0.045$ and $0.051$, so neither correlation nor timing error of the size
+tested changes the quality of the prediction: over a $0.10$~s baseline the fit
+re-absorbs a common offset into the launch velocity, and a time-stamp error
+displaces the whole trajectory rather than distorting it. The arm that does move
+the RMSE, though only by a centimetre, is the force mismatch — the same
+conclusion as \S\ref{sec:validation}, that the physical force law and not the
+sensor model is what limits this prediction. The low-launch arm produces no
+coordinate error by construction; its Brier score of $0.006$ shows that the
+clearance probability is correctly driven to zero when there is no crossing to
+predict.
+
+\begin{table}[H]
+  \centering
+  \caption{Validation across observation and force models, $750$ synthetic
+  truths per arm plus $300$ low-launch truths with no entry coordinate. The RMSE
+  is over the trajectories that reach the plane and have a well-defined
+  coordinate; the Brier score measures the whole-sphere clearance probability
+  against the binary truth and is undefined where no crossing exists. The four
+  arms were run with the same six-parameter pipeline in an independent
+  implementation maintained alongside this paper.}
+  \label{tab:errormodels}
+  \footnotesize
+  \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    Perturbation & truths & reaching & RMSE (m) & Brier \\
+    \midrule
+    model family (none)      & 750 & 731 & 0.299 & 0.0482 \\
+    common-mode offset       & 750 & 728 & 0.332 & 0.0483 \\
+    time-stamp error         & 750 & 716 & 0.290 & 0.0508 \\
+    force mismatch           & 750 & 727 & 0.306 & 0.0448 \\
+    low launch (no crossing) & 300 & 0   & ---   & 0.0058 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \subsection{Design study}
 \label{sec:design-study}
 
@@ -741,7 +801,7 @@ the timing map.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.50\textwidth]{f10-design.pdf}
+  \includegraphics[width=0.45\textwidth]{f10-design.pdf}
   \caption{Standard deviation $\sigma_y$ of the entry ordinate as a function of
   the number of fixes $n$ and the position noise $\sigma_{\rm pos}$, drawn for the
   reference noise of $10$~mm (the adopted case is $5$~mm). Contours are labelled in
@@ -752,7 +812,7 @@ the timing map.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.50\textwidth]{f11-timing.pdf}
+  \includegraphics[width=0.45\textwidth]{f11-timing.pdf}
   \caption{Two-fix timing map at the adopted $5$~mm position noise: $\sigma_y$ on
   the plane of the first and second fix times. The open circle marks the
   $0.05/0.10$~s pair of this problem, $211$~mm, and the star the best pair at
